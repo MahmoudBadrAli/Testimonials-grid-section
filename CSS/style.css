@@ -1,0 +1,192 @@
+* {
+    box-sizing: border-box;
+    margin: 0;
+    padding: 0;
+}
+
+body {
+    background-color: hsl(210, 46%, 95%);
+    font-family: 'Barlow Semi Condensed', sans-serif;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    min-height: 100vh;
+    padding: 20px;
+    overflow: hidden;
+}
+
+.company-team {
+    display: grid;
+    grid-template-columns: repeat(4, 1fr);
+    gap: 15px;
+    width: 900px;
+    max-width: 100%;
+    margin-bottom: 20px;
+}
+
+@media (max-width: 800px) {
+    body {
+        overflow: auto;
+    }
+
+    .company-team {
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+        gap: 30px;
+        width: 100%;
+    }
+
+    .daniel,
+    .jonathan,
+    .jeanette,
+    .patrick,
+    .kira {
+        width: 90%;
+        max-width: 300px;
+        padding: 28px !important;
+    }
+
+    .description .first-p {
+        font-size: 20px !important;
+
+    }
+
+    .description .second-p {
+        font-size: 14px !important;
+        line-height: 1.5;
+    }
+
+    .patrick .description .second-p {
+        line-height: 1.4 !important;
+        font-size: 13px !important;
+    }
+}
+
+
+img {
+    width: 35px;
+    height: 35px;
+    border-radius: 50%;
+    border: 2px solid hsl(264, 82%, 80%);
+    margin-right: 10px;
+}
+
+.who {
+    display: flex;
+    align-items: center;
+    margin-bottom: 15px;
+}
+
+.who .name {
+    color: hsl(214, 17%, 92%);
+    font-size: 14px;
+    font-weight: 600;
+}
+
+.who .status {
+    color: hsl(0, 0%, 81%);
+    font-size: 12px;
+    margin-top: 2px;
+}
+
+.description .first-p {
+    color: white;
+    line-height: 1.3;
+    font-size: 18px;
+    margin-bottom: 10px;
+    position: relative;
+    z-index: 2;
+}
+
+.description .second-p {
+    color: hsl(0, 0%, 81%);
+    font-size: 12px;
+    line-height: 1.3;
+}
+
+.daniel,
+.jonathan,
+.jeanette,
+.patrick,
+.kira {
+    padding: 15px;
+    border-radius: 10px;
+}
+
+.daniel {
+    background-color: hsl(263, 55%, 52%);
+    grid-column: 1 / span 2;
+    position: relative;
+}
+
+.daniel::before {
+    content: "";
+    background-image: url("../Challenge/testimonials-grid-section-main/images/bg-pattern-quotation.svg");
+    background-repeat: no-repeat;
+    position: absolute;
+    top: 0px;
+    left: 260px;
+    width: 100%;
+    height: 100%;
+    z-index: 1;
+}
+
+@media (max-width: 800px) {
+    .daniel::before {
+        display: none;
+    }
+}
+
+.jonathan {
+    background-color: hsl(217, 19%, 35%);
+    grid-column: 3;
+}
+
+.jeanette {
+    background-color: white;
+    grid-column: 1;
+}
+
+.patrick {
+    background-color: hsl(219, 29%, 14%);
+    grid-column: 2 / span 2;
+}
+
+.patrick .description .first-p {
+    color: hsl(0, 0%, 81%);
+}
+
+.kira {
+    background-color: white;
+    grid-column: 4;
+    grid-row: 1 / span 2;
+}
+
+
+.kira .description .first-p,
+.jeanette .description .first-p {
+    color: hsl(217, 19%, 35%);
+    font-size: 20px;
+    font-weight: 600;
+}
+
+.kira .who .name,
+.jeanette .who .name {
+    color: hsl(217, 19%, 35%);
+    font-weight: 600;
+}
+
+.kira .who .status,
+.jeanette .who .status {
+    color: hsl(224, 10%, 45%);
+}
+
+.kira .description .second-p {
+    color: hsl(224, 10%, 45%);
+}
+
+.jeanette .description .second-p {
+    color: hsl(217, 19%, 35%);
+    font-size: 12px;
+}
